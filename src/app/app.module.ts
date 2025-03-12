@@ -41,17 +41,17 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true, // Permite o uso de variáveis de ambiente globalmente
+      isGlobal: true, 
     }),
     CommentsModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: process.env.DATABASE_URL, // URL completa fornecida pelo Render
+      url: process.env.DATABASE_URL, 
       ssl: {
-        rejectUnauthorized: false, // Necessário para conexões seguras no Render
+        rejectUnauthorized: false, 
       },
       autoLoadEntities: true,
-      synchronize: true, // Use com cuidado em produção; ideal desativar depois de criar o schema
+      synchronize: true, 
     }),
   ],
   controllers: [AppController],
