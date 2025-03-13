@@ -22,4 +22,14 @@ export class CommentsService {
     await this.commentsRepository.save(newComment);
     return newComment;
   }
+
+  async remove(id: number) {
+    const comment = await this.commentsRepository.findOneBy({ id: id });
+
+    if (!comment) {
+      throw new Error('Comentário não encontrado!');
+    }
+
+    return this.commentsRepository.remove(comment);
+  }
 }

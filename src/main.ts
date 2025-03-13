@@ -1,4 +1,3 @@
-
 /* 
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
@@ -20,7 +19,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:5173', // Frontend local
-      'https://popotomimi.netlify.app' // URL hospedada no Netlify
+      'https://popotomimi.netlify.app', // URL hospedada no Netlify
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Métodos HTTP permitidos
     credentials: true, // Permite credenciais como cookies
